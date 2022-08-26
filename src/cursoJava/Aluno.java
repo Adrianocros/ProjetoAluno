@@ -7,28 +7,26 @@ import java.util.Objects;
 import cursoJava.constantes.StatusAluno;
 
 /*Clase/Objeto que reperesenta o aluno*/
-public class Aluno {
+public class Aluno extends Pessoa {
 	/*Estes são os atributos da Classe Aluno*/
-	private String nome;
 	private int matricula;
 	
 	
 	/*Criado a lista de disciplina no aluno*/
 	private List<Disciplina> disciplinas = new ArrayList<Disciplina>();
 	
+	public Aluno() {}
 	
+
+	public Aluno(String nomePadrao,int matricula, List<Disciplina> disciplinas) {
+		super();
+		nome = nomePadrao;
+		this.matricula = matricula;
+		this.disciplinas = disciplinas;
+	}
+
+
 	/*Cria os dados na memoria*/
-
-	
-
-	public String getNome() {
-		return nome;
-	}
-
-	public void setNome(String nome) {
-		this.nome = nome;
-	}
-
 	
 
 	public int getMatricula() {
