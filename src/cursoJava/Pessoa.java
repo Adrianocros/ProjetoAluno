@@ -18,8 +18,6 @@ public void setNome(String nome) {
 public String toString() {
 	return "Pessoa [nome=" + nome + "]";
 }
-  
-
-  
+   
  
 }

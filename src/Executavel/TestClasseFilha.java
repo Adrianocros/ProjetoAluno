@@ -2,6 +2,7 @@ package Executavel;
 
 import cursoJava.Aluno;
 
+
 public class TestClasseFilha {
 
 	public static void main(String[] args) {
@@ -9,9 +10,16 @@ public class TestClasseFilha {
 		Aluno aluno = new Aluno();
 		
 		
+		
 		aluno.setNome("Adriano");
 		aluno.setMatricula(232);
 		
+		
+	
+		
+	
+		
 		System.out.println(aluno);
+		
 	}
 }
