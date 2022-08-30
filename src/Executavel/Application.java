@@ -6,6 +6,7 @@ import java.util.List;
 
 import javax.swing.JOptionPane;
 
+import Interfaces.PermitirAcesso;
 import cursoJava.Aluno;
 import cursoJava.Disciplina;
 import cursoJava.Secretario;
@@ -18,11 +19,10 @@ public class Application {
 		String login = JOptionPane.showInputDialog("Digite o login ");
 		String senha = JOptionPane.showInputDialog("Digite a senha ");
 		
-		Secretario secretatio = new Secretario();
-		secretatio.setLogin(login);
-		secretatio.setSenha(senha);
+		PermitirAcesso secretario = new Secretario();
 		
-		if(secretatio.autenticar()) {
+		
+		if(new Secretario().autenticar(login, senha)) {
 			JOptionPane.showMessageDialog(null, "Seja bem vindo Secretario");
 		
 
@@ -144,6 +144,5 @@ public class Application {
 		}else {
 			JOptionPane.showMessageDialog(null, "Acesso nao permitido");
 		}
-		
 	}
 }
