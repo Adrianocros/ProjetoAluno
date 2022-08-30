@@ -7,7 +7,9 @@ import java.util.List;
 import javax.swing.JOptionPane;
 
 import Interfaces.PermitirAcesso;
+import classeAuxiliares.FuncaoAutenticacao;
 import cursoJava.Aluno;
+import cursoJava.Diretor;
 import cursoJava.Disciplina;
 import cursoJava.Secretario;
 import cursoJava.constantes.StatusAluno;
@@ -19,11 +21,9 @@ public class Application {
 		String login = JOptionPane.showInputDialog("Digite o login ");
 		String senha = JOptionPane.showInputDialog("Digite a senha ");
 		
-		PermitirAcesso secretario = new Secretario();
-		
-		
-		if(new Secretario().autenticar(login, senha)) {
-			JOptionPane.showMessageDialog(null, "Seja bem vindo Secretario");
+
+		if(new FuncaoAutenticacao(new Diretor(login, senha)).autenticar()) {//Trava para autirizar somente quem pode acessar
+			JOptionPane.showMessageDialog(null, "Seja bem vindo!");
 		
 
 		List<Aluno> alunos = new ArrayList<Aluno>();
@@ -142,7 +142,10 @@ public class Application {
 				System.out.println("Nome: " + aluno.getNome()+ " - Resultado: "  +aluno.getAlunoAprovado2() + " -Media: " + aluno.getMediaNota());
 			}
 		}else {
+			System.out.println(login);
+			System.out.println(senha);
 			JOptionPane.showMessageDialog(null, "Acesso nao permitido");
+			
 		}
 	}
 }

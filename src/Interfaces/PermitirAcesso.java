@@ -4,5 +4,5 @@ package Interfaces;
 public interface PermitirAcesso {
 	//Apenas declareção do metodo
 	public boolean autenticar(String login, String senha);
-
+	public boolean autenticar();
 }
